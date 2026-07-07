@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>YorFix A5 Flyer</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Print-ready A5: 148mm x 210mm, no browser margins */
+  @page { size: 148mm 210mm; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { width: 148mm; height: 210mm; }
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    color: #182435;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .navy { background: #0f1b2d; color: #fff; }
+  .orange { color: #ff6a1a; }
+
+  /* Header */
+  .head {
+    padding: 9mm 10mm 7mm;
+    background: #0f1b2d;
+    color: #fff;
+    position: relative;
+  }
+  .head::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: -1px;
+    height: 4mm;
+    background: linear-gradient(90deg, #ff6a1a 0%, #ffc42e 100%);
+  }
+  .logo { font-family: "Sora", sans-serif; font-size: 34pt; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+  .tagline { font-family: "Sora", sans-serif; font-size: 12.5pt; font-weight: 700; color: #ffc42e; margin-top: 2.5mm; }
+  .subline { font-size: 8pt; color: #ccd6e4; margin-top: 2mm; }
+
+  /* Offer ribbon */
+  .offer {
+    background: #ff6a1a; color: #fff;
+    text-align: center;
+    padding: 3.2mm 10mm;
+    font-family: "Sora", sans-serif;
+    font-weight: 800; font-size: 12pt;
+    letter-spacing: 0.02em;
+  }
+  .offer small { font-family: "Inter", sans-serif; font-weight: 600; font-size: 7.5pt; display: block; letter-spacing: 0.06em; }
+
+  /* Services */
+  .services { padding: 5.5mm 10mm 3mm; }
+  .services h2 {
+    font-family: "Sora", sans-serif; font-size: 10.5pt; font-weight: 800;
+    color: #0f1b2d; text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 3.5mm;
+  }
+  .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.2mm 5mm; }
+  .svc {
+    display: flex; align-items: baseline; gap: 2mm;
+    font-size: 8.6pt; font-weight: 600; line-height: 1.25;
+  }
+  .svc::before { content: "✔"; color: #ff6a1a; font-weight: 800; font-size: 8pt; }
+  .svc span { color: #5a6d84; font-weight: 500; }
+
+  /* Trust row */
+  .trust {
+    margin: 4mm 10mm 0;
+    border: 1.5px solid #e4e9f0;
+    border-radius: 3mm;
+    padding: 2.6mm 3mm;
+    display: flex; justify-content: space-around; gap: 2mm;
+    text-align: center;
+  }
+  .trust div { font-size: 6.8pt; font-weight: 700; color: #0f1b2d; line-height: 1.25; }
+  .trust div b { display: block; color: #ff6a1a; font-size: 9pt; }
+
+  /* Areas */
+  .areas { padding: 4mm 10mm 0; text-align: center; }
+  .areas h3 { font-family: "Sora", sans-serif; font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #5a6d84; margin-bottom: 1.6mm; }
+  .areas p { font-size: 9.5pt; font-weight: 700; color: #0f1b2d; }
+  .areas p span { color: #ff6a1a; }
+
+  /* Contact band */
+  .contact {
+    margin-top: auto;
+    background: #0f1b2d; color: #fff;
+    padding: 6mm 10mm 7mm;
+    display: flex; align-items: center; gap: 6mm;
+  }
+  .contact .left { flex: 1; }
+  .call-label { font-size: 8pt; font-weight: 600; color: #ccd6e4; text-transform: uppercase; letter-spacing: 0.1em; }
+  .phone { font-family: "Sora", sans-serif; font-size: 21pt; font-weight: 800; color: #ffc42e; line-height: 1.15; }
+  .web { font-size: 8.5pt; font-weight: 600; color: #fff; margin-top: 2mm; word-break: break-all; }
+  .hours { font-size: 7pt; color: #ccd6e4; margin-top: 1.6mm; }
+  .qr-box { text-align: center; }
+  .qr-box img { width: 26mm; height: 26mm; border-radius: 2mm; background: #fff; padding: 1mm; }
+  .qr-box div { font-size: 6.5pt; font-weight: 700; color: #ffc42e; margin-top: 1.4mm; text-transform: uppercase; letter-spacing: 0.06em; }
+</style>
+</head>
+<body>
+
+  <div class="head">
+    <div class="logo">Yor<span class="orange">Fix</span></div>
+    <div class="tagline">One Call Sorts It All</div>
+    <div class="subline">Trusted handyman &amp; home services for homes and businesses across South Yorkshire</div>
+  </div>
+
+  <div class="offer">10% OFF YOUR FIRST BOOKING<small>Quote code YORFIX10 when you book. New customers only.</small></div>
+
+  <div class="services">
+    <h2>What we sort</h2>
+    <div class="svc-grid">
+      <div class="svc">Cleaning <span>inc. end of tenancy</span></div>
+      <div class="svc">Plumbing <span>leaks, taps, toilets</span></div>
+      <div class="svc">Electrical <span>sockets &amp; lighting</span></div>
+      <div class="svc">AC repair &amp; servicing</div>
+      <div class="svc">Appliance fitting</div>
+      <div class="svc">Flat-pack assembly <span>IKEA pros</span></div>
+      <div class="svc">TV mounting &amp; shelving</div>
+      <div class="svc">Removals &amp; man-and-van</div>
+      <div class="svc">Odd jobs <span>anything that needs doing</span></div>
+      <div class="svc">Curtains &amp; blinds fitted</div>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div><b>✓</b>Fully Insured</div>
+    <div><b>✓</b>DBS Checked</div>
+    <div><b>✓</b>12-Month Guarantee</div>
+    <div><b>✓</b>Same-Day Callouts</div>
+  </div>
+
+  <div class="areas">
+    <h3>Areas we cover</h3>
+    <p>Sheffield <span>·</span> Rotherham <span>·</span> Barnsley <span>·</span> Chesterfield <span>·</span> Mansfield</p>
+  </div>
+
+  <div class="contact">
+    <div class="left">
+      <div class="call-label">Call or text</div>
+      <div class="phone">0114 496 0123</div>
+      <div class="web">livnotengineeringltd-arch.github.io/yorfix</div>
+      <div class="hours">Mon to Fri 8am-6pm · Sat 9am-4pm · Emergencies 7 days</div>
+    </div>
+    <div class="qr-box">
+      <img src="qr.png" alt="QR code linking to the YorFix booking page">
+      <div>Scan to book</div>
+    </div>
+  </div>
+
+</body>
+</html>
