@@ -25,11 +25,14 @@ GitHub Pages, with a real bookings database behind it:
 - `flyer/` contains a print-ready A5 flyer (PDF) with a QR code that links to
   this site.
 
-## Placeholders to replace before real marketing
+## Contact details
 
-- Phone number `0114 496 0123` (an Ofcom drama-range placeholder) in
-  `index.html`, `js/config.js` and the flyer.
-- WhatsApp number `447700900123` in `index.html` and `js/config.js`.
+- Phone and SMS: `07757 807529` (the real business mobile, live in
+  `index.html`, `js/config.js` and the flyer).
+- WhatsApp: same mobile (`447757807529`).
+
+## Placeholders still to replace before real marketing
+
 - Email `hello@yorfix.co.uk` (domain is registered, but the mailbox is not set
   up yet, so this address will bounce until email is configured).
 - Social media URLs in the footer (currently pointing at unregistered handles).
