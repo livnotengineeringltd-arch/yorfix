@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YorFix Admin | Bookings</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body">
+
+  <div class="admin-top">
+    <div class="wrap">
+      <a class="logo" href="index.html">Yor<span>Fix</span></a>
+      <span style="font-size:0.85rem; opacity:0.7;">Bookings admin</span>
+      <span class="spacer"></span>
+      <button class="btn btn-sm btn-ghost" id="refreshBtn" style="display:none;">Refresh</button>
+      <button class="btn btn-sm btn-ghost" id="signOutBtn" style="display:none;">Sign out</button>
+    </div>
+  </div>
+
+  <main class="admin-main">
+    <div class="wrap">
+
+      <!-- Token login -->
+      <div class="form-card admin-login" id="loginCard">
+        <h3 style="color:var(--navy); margin-bottom:8px;">Admin sign in</h3>
+        <p style="font-size:0.9rem; color:var(--steel); margin-bottom:18px;">Paste your admin token. It is saved in this browser so you only do this once per device.</p>
+        <div class="form-field">
+          <label for="tokenInput">Admin token</label>
+          <input type="password" id="tokenInput" autocomplete="off" placeholder="Paste token...">
+        </div>
+        <div class="form-msg" id="loginMsg" role="alert"></div>
+        <button class="btn btn-primary" id="loginBtn" style="width:100%; margin-top:16px;">Sign in</button>
+      </div>
+
+      <!-- Dashboard -->
+      <div id="dashboard" style="display:none;">
+        <div class="stat-row" id="statRow"></div>
+
+        <div class="admin-tabs">
+          <button id="tabBookings" class="active">Bookings</button>
+          <button id="tabMessages">Messages</button>
+        </div>
+
+        <div class="admin-table-wrap" id="tableWrap"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
