@@ -3,7 +3,9 @@
 Handyman and home services website for Sheffield and South Yorkshire.
 Tagline: **One Call Sorts It All**
 
-Live site: https://livnotengineeringltd-arch.github.io/yorfix/
+Live site: https://yorfix.com/ (also reachable at the underlying
+https://livnotengineeringltd-arch.github.io/yorfix/, and yorfix.co.uk
+redirects to yorfix.com via a Cloudflare rule)
 
 ## What this is
 
@@ -28,7 +30,8 @@ GitHub Pages, with a real bookings database behind it:
 - Phone number `0114 496 0123` (an Ofcom drama-range placeholder) in
   `index.html`, `js/config.js` and the flyer.
 - WhatsApp number `447700900123` in `index.html` and `js/config.js`.
-- Email `hello@yorfix.co.uk` (domain not registered yet).
+- Email `hello@yorfix.co.uk` (domain is registered, but the mailbox is not set
+  up yet, so this address will bounce until email is configured).
 - Social media URLs in the footer (currently pointing at unregistered handles).
 - Commercial client logos in the trust section (fictional example names).
 - Reviews are illustrative examples, swap for real ones as they arrive.
