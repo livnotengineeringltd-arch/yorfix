@@ -8,8 +8,16 @@
 (function () {
   const cfg = YORFIX_CONFIG;
   const TOKEN_KEY = "yorfix-admin-token";
+  const TOKEN_SAVED_AT_KEY = "yorfix-admin-token-saved-at";
+  const TOKEN_MAX_AGE_MS = 14 * 24 * 60 * 60 * 1000; // 14 days
   const STATUSES = ["new", "contacted", "scheduled", "done", "cancelled"];
 
+  const savedAt = Number(localStorage.getItem(TOKEN_SAVED_AT_KEY));
+  const tokenExpired = !savedAt || (Date.now() - savedAt) > TOKEN_MAX_AGE_MS;
+  if (tokenExpired) {
+    localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(TOKEN_SAVED_AT_KEY);
+  }
   let token = localStorage.getItem(TOKEN_KEY) || "";
   let bookings = [];
   let messages = [];
@@ -168,6 +176,7 @@
   refreshBtn.addEventListener("click", function () { loadAll().catch(showLogin); });
   signOutBtn.addEventListener("click", function () {
     localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(TOKEN_SAVED_AT_KEY);
     token = "";
     showLogin();
   });
@@ -189,6 +198,7 @@
     token = candidate;
     await rpc("yorfix_admin_list", { p_token: token }); // throws if the token is wrong
     localStorage.setItem(TOKEN_KEY, token);
+    localStorage.setItem(TOKEN_SAVED_AT_KEY, String(Date.now()));
     showDashboard();
     await loadAll();
   }
@@ -210,7 +220,7 @@
 
   // Auto sign-in if a token is already saved on this device.
   if (token) {
-    tryLogin(token).catch(function () { token = ""; localStorage.removeItem(TOKEN_KEY); showLogin(); });
+    tryLogin(token).catch(function () { token = ""; localStorage.removeItem(TOKEN_KEY); localStorage.removeItem(TOKEN_SAVED_AT_KEY); showLogin(); });
   } else {
     showLogin();
   }
