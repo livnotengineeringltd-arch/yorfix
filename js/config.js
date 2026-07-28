@@ -3,8 +3,8 @@
 // Data safety comes from row level security: this key can only SUBMIT
 // bookings and messages, it can never read them back.
 const YORFIX_CONFIG = {
-  SUPABASE_URL: "https://afoxfjyvizefcfwvsuim.supabase.co",
-  SUPABASE_ANON_KEY: "sb_publishable_pcrI16SXQ3QV3oi-5JG-6A_3zwGxxkG",
+  SUPABASE_URL: "https://mgrsyqquvbocaxxyrmax.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_6SBnDYbJKgJHbbKs2vpuXQ_kTrRYwrl",
   PHONE_DISPLAY: "07757 807529",
   PHONE_TEL: "+447757807529",
   PHONE_SMS: "+447757807529",
