@@ -9,5 +9,5 @@ const YORFIX_CONFIG = {
   PHONE_TEL: "+447757807529",
   PHONE_SMS: "+447757807529",
   WHATSAPP: "447757807529",
-  EMAIL: "hello@yorfix.co.uk"
+  EMAIL: "hello@yorfix.com"
 };

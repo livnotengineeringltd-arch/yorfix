@@ -30,11 +30,14 @@ GitHub Pages, with a real bookings database behind it:
 - Phone and SMS: `07757 807529` (the real business mobile, live in
   `index.html`, `js/config.js` and the flyer).
 - WhatsApp: same mobile (`447757807529`).
+- Email: `hello@yorfix.com`, delivered by Cloudflare Email Routing, which
+  forwards it into an existing inbox rather than creating a new mailbox. It is
+  receive-only: replies go out from the personal address behind it. The old
+  `hello@yorfix.co.uk` was never set up and bounced every message, so it was
+  retired on 1 August 2026.
 
 ## Placeholders still to replace before real marketing
 
-- Email `hello@yorfix.co.uk` (domain is registered, but the mailbox is not set
-  up yet, so this address will bounce until email is configured).
 - Social media URLs in the footer (currently pointing at unregistered handles).
 - Commercial client logos in the trust section (fictional example names).
 - Reviews are illustrative examples, swap for real ones as they arrive.
