@@ -1,0 +1,131 @@
+{
+  "communities": {
+    "0": [
+      "js_admin",
+      "js_admin_esc",
+      "js_admin_fmtdate",
+      "js_admin_rendertable",
+      "js_admin_showlogin",
+      "js_admin_statusselect",
+      "js_admin_switchtab"
+    ],
+    "1": [
+      "js_main",
+      "js_main_gohero",
+      "js_main_goreview",
+      "js_main_nexthero",
+      "js_main_restartherotimer",
+      "js_main_restartrevtimer",
+      "js_main_selectservice"
+    ],
+    "2": [
+      "js_admin_loadall",
+      "js_admin_renderstats",
+      "js_admin_rpc",
+      "js_admin_showdashboard",
+      "js_admin_trylogin"
+    ],
+    "3": [
+      "js_api",
+      "js_api_yorfixapi"
+    ],
+    "4": [
+      "js_config",
+      "js_config_yorfix_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.5238095238095238,
+    "1": 0.42857142857142855,
+    "2": 0.5,
+    "3": 1.0,
+    "4": 1.0
+  },
+  "gods": [
+    {
+      "id": "js_admin_rendertable",
+      "label": "renderTable()",
+      "degree": 6
+    },
+    {
+      "id": "js_admin_loadall",
+      "label": "loadAll()",
+      "degree": 5
+    },
+    {
+      "id": "js_admin_trylogin",
+      "label": "tryLogin()",
+      "degree": 4
+    },
+    {
+      "id": "js_admin_rpc",
+      "label": "rpc()",
+      "degree": 3
+    },
+    {
+      "id": "js_admin_esc",
+      "label": "esc()",
+      "degree": 3
+    },
+    {
+      "id": "js_admin_statusselect",
+      "label": "statusSelect()",
+      "degree": 3
+    },
+    {
+      "id": "js_main_nexthero",
+      "label": "nextHero()",
+      "degree": 3
+    },
+    {
+      "id": "js_admin_fmtdate",
+      "label": "fmtDate()",
+      "degree": 2
+    },
+    {
+      "id": "js_admin_renderstats",
+      "label": "renderStats()",
+      "degree": 2
+    },
+    {
+      "id": "js_admin_switchtab",
+      "label": "switchTab()",
+      "degree": 2
+    }
+  ],
+  "surprises": [
+    {
+      "source": "loadAll()",
+      "target": "renderTable()",
+      "source_files": [
+        "js/admin.js",
+        "js/admin.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 2 → community 0"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `renderTable()` connect `Community 0` to `Community 2`?",
+      "why": "High betweenness centrality (0.019) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `loadAll()` connect `Community 2` to `Community 0`?",
+      "why": "High betweenness centrality (0.011) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `tryLogin()` connect `Community 2` to `Community 0`?",
+      "why": "High betweenness centrality (0.004) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `YorFixAPI`, `YORFIX_CONFIG` to the rest of the system?",
+      "why": "2 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}
