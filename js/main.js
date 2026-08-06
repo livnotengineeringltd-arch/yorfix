@@ -1,6 +1,6 @@
 // ============================================================
-// YorFix page behaviour: hero slider, mobile nav, reviews
-// carousel, FAQ accordion, and the two forms.
+// YorFix page behaviour: hero slider, mobile nav,
+// FAQ accordion, and the two forms.
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -50,37 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     heroTimer = setInterval(nextHero, 5000);
   }
   restartHeroTimer();
-
-  // ---------- Reviews carousel ----------
-  const track = document.getElementById("reviewTrack");
-  const cards = track.children.length;
-  const revDotsWrap = document.getElementById("revDots");
-  let revIndex = 0;
-  let revTimer = null;
-
-  for (let i = 0; i < cards; i++) {
-    const b = document.createElement("button");
-    b.setAttribute("aria-label", "Show review " + (i + 1));
-    if (i === 0) b.classList.add("active");
-    b.addEventListener("click", function () { goReview(i); restartRevTimer(); });
-    revDotsWrap.appendChild(b);
-  }
-  const revDots = Array.from(revDotsWrap.children);
-
-  function goReview(i) {
-    revIndex = (i + cards) % cards;
-    track.style.transform = "translateX(-" + (revIndex * 100) + "%)";
-    revDots.forEach(function (d, j) { d.classList.toggle("active", j === revIndex); });
-  }
-  function restartRevTimer() {
-    clearInterval(revTimer);
-    revTimer = setInterval(function () { goReview(revIndex + 1); }, 6000);
-  }
-  document.getElementById("revPrev").addEventListener("click", function () { goReview(revIndex - 1); restartRevTimer(); });
-  document.getElementById("revNext").addEventListener("click", function () { goReview(revIndex + 1); restartRevTimer(); });
-  document.getElementById("reviewCarousel").addEventListener("mouseenter", function () { clearInterval(revTimer); });
-  document.getElementById("reviewCarousel").addEventListener("mouseleave", restartRevTimer);
-  restartRevTimer();
 
   // ---------- FAQ accordion ----------
   document.querySelectorAll(".faq-item").forEach(function (item) {

@@ -13,7 +13,7 @@ A fully static, mobile-first site (plain HTML/CSS/JS, no build step) hosted on
 GitHub Pages, with a real bookings database behind it:
 
 - `index.html` is the public site: rotating hero, nine service cards with
-  indicative pricing, areas covered, trust badges, reviews carousel, booking
+  indicative pricing, areas covered, trust badges, booking
   form, FAQ, contact form and footer.
 - `admin.html` is the bookings dashboard. It asks for an admin token once per
   device and then shows every booking and contact message with status
@@ -39,9 +39,20 @@ GitHub Pages, with a real bookings database behind it:
 ## Placeholders still to replace before real marketing
 
 - Social media URLs in the footer (currently pointing at unregistered handles).
-- Commercial client logos in the trust section (fictional example names).
-- Reviews are illustrative examples, swap for real ones as they arrive.
 - Hero photos are Unsplash stock, replace with photos of the real team.
+
+## Reviews policy (important)
+
+The site launched with six invented customer reviews, a fabricated "4.9/5 from
+187 reviews" badge, `aggregateRating` schema markup, and six fictional
+commercial client logos. All of it was removed on 1 August 2026 because
+publishing fake reviews or fake endorsements is a criminal offence under the
+Digital Markets, Competition and Consumers Act 2024, and the schema markup was
+feeding invented star ratings straight into Google search results.
+
+The reviews section is now an honest "Our promise" block. When real reviews
+arrive, add them with the customer's genuine words and permission. Never
+re-add `aggregateRating` until the rating it states is real and verifiable.
 
 ## Deploying changes
 
