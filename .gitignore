@@ -2,3 +2,11 @@
 # Generated knowledge graph, rebuilt locally with 'graphify update .'
 # Not needed by the website and this repo is public.
 graphify-out/
+
+# Settings files never belong in Git, and this repo is PUBLIC.
+# There is no .env here today, this is so one can never be added by accident.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
