@@ -1,0 +1,40 @@
+# Publish the YorFix site to GitHub Pages.
+#
+# We deploy through GitHub Actions rather than the older built-in Pages
+# pipeline, because on 6 August 2026 that pipeline wedged: builds succeeded but
+# every deployment sat in "deployment_queued" until it timed out, leaving the
+# live site stuck on an old version for hours. This path is supported, gives
+# real logs when something fails, and does not run Jekyll over what is already
+# plain static HTML.
+name: Deploy site to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a newer push replace an in-flight one instead of queueing behind it.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      # The whole repository is the site: there is no build step.
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
