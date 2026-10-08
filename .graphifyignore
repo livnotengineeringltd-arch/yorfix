@@ -9,3 +9,17 @@ coverage/
 *.tsbuildinfo
 package-lock.json
 package.json
+
+# Privacy rules, added 8 Oct 2026 by the Chief of Staff (Graphs #1, Sam's yes).
+# graphify copies file names and Markdown headings into the graph, and makes
+# Markdown copies of Word and Excel files, so these never go in.
+*.docx
+*.xlsx
+*.csv
+*.pdf
+*.pem
+*.key
+*credential*
+*secret*
+students/
+Students/
